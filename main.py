@@ -29,27 +29,27 @@ PATH = [(145, 109), (99, 66), (54, 104), (50, 355), (63, 417), (248, 593), (305,
         (379, 217), (581, 213), (614, 137), (577, 63), (288, 62), (246, 79), (234, 125), (234, 294), (192, 343), (156, 313), (151, 230)]
 
 class GameInfo:
-    LEVELS = 10
+    levels = 10
 
-    def __init__(self, Level = 1):
-        self.level = Level
-        self.started = False
+    def __init__(self, level = 1):
+        self.level = level
+        self.started = false
         self.level_start_time = 0
 
     def next_level(self):
         self.level += 1
-        self.started = False
+        self.started = false
 
     def reset(self):
         self.level = 1
-        self.started = False
+        self.started = false
         self.level_start_time = 0
 
     def game_finished(self):
         return self.level  > self.LEVELS
     
     def start_level(self):
-        self.started = True
+        self.started = true
         self.level_start_time = time.time()
 
     def get_level_time(self):
